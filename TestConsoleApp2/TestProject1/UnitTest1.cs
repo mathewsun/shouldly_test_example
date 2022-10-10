@@ -27,4 +27,16 @@ public class UnitTest1
         });
     }
 
+    [Fact]
+    public async Task Test2()
+    {
+        Func<Task> doSomething = async () =>
+        {
+            var denominator = 0;
+            var res = 10 / denominator;
+            await Task.Delay(1);
+        };
+        var exception = await Should.ThrowAsync<DivideByZeroException>(() => doSomething());
+    }
+
 }
