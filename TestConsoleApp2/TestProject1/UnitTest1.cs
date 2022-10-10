@@ -51,4 +51,10 @@ public class UnitTest1
         action.ShouldThrow<DivideByZeroException>();
     }
 
+    [Fact]
+    public async Task Test4()
+    {
+        Should.Throw<ArgumentNullException>(() => new Person("Homer"));
+    }
+
 }
