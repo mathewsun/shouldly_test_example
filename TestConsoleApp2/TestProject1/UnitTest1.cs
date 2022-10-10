@@ -39,4 +39,16 @@ public class UnitTest1
         var exception = await Should.ThrowAsync<DivideByZeroException>(() => doSomething());
     }
 
+    [Fact]
+    public async Task Test3()
+    {
+        var homer = new Person { Name = "Homer", Salary = 30000 };
+        var denominator = 0;
+        var action = () =>
+        {
+            var y = homer.Salary / denominator;
+        };
+        action.ShouldThrow<DivideByZeroException>();
+    }
+
 }
