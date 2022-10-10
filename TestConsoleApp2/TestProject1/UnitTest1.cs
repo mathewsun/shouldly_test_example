@@ -57,4 +57,19 @@ public class UnitTest1
         Should.Throw<ArgumentNullException>(() => new Person("Homer"));
     }
 
+    [Fact]
+    public async Task Test5()
+    {
+        var homer = new Person { Name = "Homer", Salary = 30000 };
+        var denominator = 0;
+        Should.Throw<DivideByZeroException>(() =>
+        {
+            var task = Task.Factory.StartNew(
+                () =>
+                {
+                    var y = homer.Salary / denominator;
+                });
+            return task;
+        });
+    }
 }
