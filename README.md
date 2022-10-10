@@ -12,7 +12,9 @@ Should.Throw<DivideByZeroException>(() =>
                 {
                     var y = homer.Salary / denominator;
                 });
-​ | ​
+  
+
+  
 Exception
 `var y = homer.Salary / denominator;`
     should throw
@@ -24,7 +26,9 @@ Func<Task> doSomething = async () =>
     await Task.Delay(1);
 };
 var exception = await Should.ThrowAsync<DivideByZeroException>(() => doSomething());
-​ | ​
+  
+
+  
 Exception
 Task doSomething() should throw System.DivideByZeroException but did not
 ShouldThrow Action Extension
@@ -35,7 +39,9 @@ var action = () =>
                     var y = homer.Salary / denominator;
                 };
 action.ShouldThrow<DivideByZeroException>();
-​ | ​
+  
+
+  
 Exception
 `action()`
     should throw
@@ -43,7 +49,9 @@ System.DivideByZeroException
     but did not
 ShouldThrowFunc
 Should.Throw<ArgumentNullException>(() => new Person("Homer"));
-​ | ​
+  
+
+  
 Exception
 `new Person("Homer")`
     should throw
@@ -52,7 +60,9 @@ System.ArgumentNullException
 ShouldThrow Func Extension
 var func = () => new Person("Homer");
 func.ShouldThrow<ArgumentNullException>();
-​ | ​
+  
+  
+  
 Exception
 `func()`
     should throw
@@ -70,7 +80,9 @@ Should.Throw<DivideByZeroException>(() =>
                         });
                     return task;
                 });
-​ | ​
+ 
+  
+
 Exception
 Task `var task = Task.Factory.StartNew( () => { var y = homer.Salary / denominator; }); return task;`
     should throw
